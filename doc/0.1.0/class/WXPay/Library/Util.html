@@ -1,0 +1,408 @@
+<html>
+
+
+    <head>
+
+        <link rel="stylesheet" type="text/css" href="../../../asset/static/prettify.css" />
+
+<script src="../../../asset/static/prettify.js"></script>
+<script src="../../../asset/api_definition.js"></script>
+
+
+                        <link rel="stylesheet" type="text/css" href="../../../asset/static/prettify.css" />
+                    <link rel="stylesheet" type="text/css" href="../../../asset/static/zephir-theme.css" />
+            
+    
+
+                        <script src="../../../asset/static/prettify.js"></script>
+                                    <script src="../../../asset/api_definition.js"></script>
+                    <script src="../../../asset/static/jquery.min.js"></script>
+                    <script src="../../../asset/static/zephir-doc.js"></script>
+            
+        <script>var ZepCurrentPath = '../../../'</script>
+
+        
+    </head>
+
+
+    <body onload="prettyPrint()">
+        <div id="top-bar">
+            <div id="top-left">
+                                    wxpay Documentation <span class="version">v0.1.0</span>
+                            </div>
+            <div id="top-right">
+
+            </div>
+        </div>
+
+        <div id="body">
+
+            <div id="body-left">
+
+                <div class="header-search">
+
+                    <input class="search-box" placeholder="Search for a class or namespace " type="text" />
+
+                    <div id="menu-wrapper">
+
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div id="body-right">
+                <div class="content">
+                    
+<div class="breadcrumb">
+    
+    <ul>
+        
+        <li><a href="../../../index.html">Home</a></li>
+        
+                <li><a href="../../../classes.html">Classes</a></li>
+                <li><a >WXPay\Library\Util</a></li>
+                
+    </ul>
+    
+</div>
+<div class="class-header clearfix">
+    
+    
+    <div class="access-buttons">
+        <a class="zep-button" href="../../../source/WXPay/Library/Util.html">Source</a>
+
+            </div>
+    
+    <div class="class-full-name">
+        
+        <span class="class-type">Class</span>
+        
+                <span class="namespace-piece">
+            <a href="../../../namespace/WXPay.html">WXPay</a>
+        </span>
+                <span class="namespace-piece">
+            <a href="../../../namespace/WXPay/Library.html">Library</a>
+        </span>
+                <h1 class="class-name">Util</h1>
+    </div>
+
+</div>
+
+
+<div class="hidden-anchor"  id="methods"></div>
+<div class="methods-summary standard-bandeau">Methods</div>
+<ul class="method-summary-list">
+    
+        
+<li class="class-method clearfix">
+
+    <div class="method-return">
+
+        string
+                
+    </div>
+    <div class="method-summary">
+        <span class="method-name"><a href="#method-details-make_sign">make_sign</a></span>(<span class="param-data-type">variable</span>  <span class="param-name">$apiObject</span>,<span class="param-data-type">string</span>  <span class="param-name">$key</span>)
+            </div>
+
+</li>
+    
+        
+<li class="class-method clearfix">
+
+    <div class="method-return">
+
+        string
+                
+    </div>
+    <div class="method-summary">
+        <span class="method-name"><a href="#method-details-genRandomString">genRandomString</a></span>(<span class="param-data-type">int</span>  <span class="param-name">$length</span>)
+            </div>
+
+</li>
+    
+        
+<li class="class-method clearfix">
+
+    <div class="method-return">
+
+        array
+                
+    </div>
+    <div class="method-summary">
+        <span class="method-name"><a href="#method-details-convertXmlToArray">convertXmlToArray</a></span>(<span class="param-data-type">string</span>  <span class="param-name">$xml</span>)
+                <div class="summary-text">转换 xml 字符串为 数组格式.</div>
+            </div>
+
+</li>
+    
+        
+<li class="class-method clearfix">
+
+    <div class="method-return">
+
+        string
+                
+    </div>
+    <div class="method-summary">
+        <span class="method-name"><a href="#method-details-convertArrayToXml">convertArrayToXml</a></span>(<span class="param-data-type">array</span>  <span class="param-name">$arr</span>)
+                <div class="summary-text">将数组转换为 xml 格式(字符串)</div>
+            </div>
+
+</li>
+    
+        
+<li class="class-method clearfix">
+
+    <div class="method-return">
+
+        
+                
+    </div>
+    <div class="method-summary">
+        <span class="method-name"><a href="#method-details-getRealIp">getRealIp</a></span>()
+                <div class="summary-text">获取客户端IP地址</div>
+            </div>
+
+</li>
+    
+        
+<li class="class-method clearfix">
+
+    <div class="method-return">
+
+        
+                
+    </div>
+    <div class="method-summary">
+        <span class="method-name"><a href="#method-details-callWeChatApi">callWeChatApi</a></span>(<span class="param-data-type">string</span>  <span class="param-name">$apiUri</span>,<span class="param-data-type">string</span>  <span class="param-name">$xml</span>,<span class="param-data-type">string</span>  <span class="param-name">$cert</span>,<span class="param-data-type">string</span>  <span class="param-name">$key</span>,<span class="param-data-type">string</span>  <span class="param-name">$rootca</span>)
+                <div class="summary-text">使用商户的cert,key调用 wechat-api.</div>
+            </div>
+
+</li>
+    </ul>
+
+<div class="hidden-anchor"  id="methods-details"></div>
+<div class="methods-summary standard-bandeau">Methods Details</div>
+<ul class="method-details-list">
+    
+        
+<li class="class-method clearfix">
+
+    <div class="hidden-anchor"  id="method-details-make_sign"></div>
+    
+    <div class="method-details">
+        
+
+        
+
+        <div class="method-details-details">
+            <div class="method-signature">
+
+                
+                                    
+                <span class="visibility-public">public</span>
+                
+                                    
+                <span class="visibility-static">static</span>
+                
+                                
+                function <h3 class="method-name">make_sign</h3>(<span class="param-data-type">variable</span>  <span class="param-name">$apiObject</span>,<span class="param-data-type">string</span>  <span class="param-name">$key</span>)
+                
+                                
+            </div>
+        </div>
+
+    </div>
+
+</li>
+    
+        
+<li class="class-method clearfix">
+
+    <div class="hidden-anchor"  id="method-details-genRandomString"></div>
+    
+    <div class="method-details">
+        
+
+        
+
+        <div class="method-details-details">
+            <div class="method-signature">
+
+                
+                                    
+                <span class="visibility-public">public</span>
+                
+                                    
+                <span class="visibility-static">static</span>
+                
+                                
+                function <h3 class="method-name">genRandomString</h3>(<span class="param-data-type">int</span>  <span class="param-name">$length</span>)
+                
+                                
+            </div>
+        </div>
+
+    </div>
+
+</li>
+    
+        
+<li class="class-method clearfix">
+
+    <div class="hidden-anchor"  id="method-details-convertXmlToArray"></div>
+    
+    <div class="method-details">
+        
+
+        
+
+        <div class="method-details-details">
+            <div class="method-signature">
+
+                
+                                    
+                <span class="visibility-public">public</span>
+                
+                                    
+                <span class="visibility-static">static</span>
+                
+                                
+                function <h3 class="method-name">convertXmlToArray</h3>(<span class="param-data-type">string</span>  <span class="param-name">$xml</span>)
+                
+                                
+                    <div>
+                    转换 xml 字符串为 数组格式.                    </div>
+                    <div>
+                                        </div>
+                
+                                
+            </div>
+        </div>
+
+    </div>
+
+</li>
+    
+        
+<li class="class-method clearfix">
+
+    <div class="hidden-anchor"  id="method-details-convertArrayToXml"></div>
+    
+    <div class="method-details">
+        
+
+        
+
+        <div class="method-details-details">
+            <div class="method-signature">
+
+                
+                                    
+                <span class="visibility-public">public</span>
+                
+                                    
+                <span class="visibility-static">static</span>
+                
+                                
+                function <h3 class="method-name">convertArrayToXml</h3>(<span class="param-data-type">array</span>  <span class="param-name">$arr</span>)
+                
+                                
+                    <div>
+                    将数组转换为 xml 格式(字符串)                    </div>
+                    <div>
+                                        </div>
+                
+                                
+            </div>
+        </div>
+
+    </div>
+
+</li>
+    
+        
+<li class="class-method clearfix">
+
+    <div class="hidden-anchor"  id="method-details-getRealIp"></div>
+    
+    <div class="method-details">
+        
+
+        
+
+        <div class="method-details-details">
+            <div class="method-signature">
+
+                
+                                    
+                <span class="visibility-public">public</span>
+                
+                                    
+                <span class="visibility-static">static</span>
+                
+                                
+                function <h3 class="method-name">getRealIp</h3>()
+                
+                                
+                    <div>
+                    获取客户端IP地址                    </div>
+                    <div>
+                                        </div>
+                
+                                
+            </div>
+        </div>
+
+    </div>
+
+</li>
+    
+        
+<li class="class-method clearfix">
+
+    <div class="hidden-anchor"  id="method-details-callWeChatApi"></div>
+    
+    <div class="method-details">
+        
+
+        
+
+        <div class="method-details-details">
+            <div class="method-signature">
+
+                
+                                    
+                <span class="visibility-public">public</span>
+                
+                                    
+                <span class="visibility-static">static</span>
+                
+                                
+                function <h3 class="method-name">callWeChatApi</h3>(<span class="param-data-type">string</span>  <span class="param-name">$apiUri</span>,<span class="param-data-type">string</span>  <span class="param-name">$xml</span>,<span class="param-data-type">string</span>  <span class="param-name">$cert</span>,<span class="param-data-type">string</span>  <span class="param-name">$key</span>,<span class="param-data-type">string</span>  <span class="param-name">$rootca</span>)
+                
+                                
+                    <div>
+                    使用商户的cert,key调用 wechat-api.                    </div>
+                    <div>
+                                        </div>
+                
+                                
+            </div>
+        </div>
+
+    </div>
+
+</li>
+    </ul>                </div>
+            </div>
+
+        </div>
+
+    </body>
+
+
+
+</html>

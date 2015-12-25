@@ -1,0 +1,198 @@
+<html>
+
+
+    <head>
+
+        <link rel="stylesheet" type="text/css" href="../../../../asset/static/prettify.css" />
+
+<script src="../../../../asset/static/prettify.js"></script>
+<script src="../../../../asset/api_definition.js"></script>
+
+
+                        <link rel="stylesheet" type="text/css" href="../../../../asset/static/prettify.css" />
+                    <link rel="stylesheet" type="text/css" href="../../../../asset/static/zephir-theme.css" />
+            
+    
+
+                        <script src="../../../../asset/static/prettify.js"></script>
+                                    <script src="../../../../asset/api_definition.js"></script>
+                    <script src="../../../../asset/static/jquery.min.js"></script>
+                    <script src="../../../../asset/static/zephir-doc.js"></script>
+            
+        <script>var ZepCurrentPath = '../../../../'</script>
+
+        
+    </head>
+
+
+    <body onload="prettyPrint()">
+        <div id="top-bar">
+            <div id="top-left">
+                                    wxpay Documentation <span class="version">v0.1.0</span>
+                            </div>
+            <div id="top-right">
+
+            </div>
+        </div>
+
+        <div id="body">
+
+            <div id="body-left">
+
+                <div class="header-search">
+
+                    <input class="search-box" placeholder="Search for a class or namespace " type="text" />
+
+                    <div id="menu-wrapper">
+
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div id="body-right">
+                <div class="content">
+                    
+<div class="breadcrumb">
+    
+    <ul>
+        
+        <li><a href="../../../../index.html">Home</a></li>
+        
+                <li><a href="../../../../classes.html">Classes</a></li>
+                <li><a href="../../../../class/WXPay/Api/Micropay/AutocodeToOpenId.html">WXPay\Api\Micropay\AutocodeToOpenId</a></li>
+                <li><a >Source</a></li>
+                
+    </ul>
+    
+</div>
+<div class="class-header source clearfix">
+    
+    <div class="access-buttons">
+        <a class="zep-button" href="../../../../class/WXPay/Api/Micropay/AutocodeToOpenId.html">Class</a>
+
+            </div>
+    
+    <div class="class-full-name">
+        
+        <span class="class-type">Class</span>
+        
+                <span class="namespace-piece">
+            <a href="../../../../namespace/WXPay.html">WXPay</a>
+        </span>
+                <span class="namespace-piece">
+            <a href="../../../../namespace/WXPay/Api.html">Api</a>
+        </span>
+                <span class="namespace-piece">
+            <a href="../../../../namespace/WXPay/Api/Micropay.html">Micropay</a>
+        </span>
+                <h1 class="class-name">AutocodeToOpenId</h1>
+    </div>
+    
+</div>
+
+
+<pre class="zephir-source-file prettyprint linenums">namespace WXPay\Api\Micropay;
+
+use WXPay\Api;
+
+class AutocodeToOpenId extends Api
+{
+
+    public api_url = "https://api.mch.weixin.qq.com/tools/authcodetoopenid";
+
+    public is_secure_pay = false;
+
+    /**
+     * 公众账号ID 是
+     *
+     * @var 是 appid String(32)
+     *
+     * <summary>
+     * 微信分配的公众账号ID
+     * </summary>
+     *
+     * @see https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_13&index=9
+     */
+    protected appid;
+    /**
+     * 商户号 是
+     *
+     * @var 是 mch_id String(32)
+     *
+     * <summary>
+     * 微信支付分配的商户号
+     * </summary>
+     *
+     * @see https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_13&index=9
+     */
+    protected mch_id;
+    /**
+     * 授权码 是
+     *
+     * @var 是 auth_code String(128)
+     *
+     * <summary>
+     * 扫码支付授权码，设备读取用户微信中的条码或者二维码信息
+     * 
+     * </summary>
+     *
+     * @see https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_13&index=9
+     */
+    protected auth_code;
+    /**
+     * 随机字符串 是
+     *
+     * @var 是 nonce_str String(32)
+     *
+     * <summary>
+     * 随机字符串，不长于32位
+     * </summary>
+     *
+     * @see https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_13&index=9
+     */
+    protected nonce_str;
+    /**
+     * 签名 是
+     *
+     * @var 是 sign String(32)
+     *
+     * <summary>
+     * 签名
+     * </summary>
+     *
+     * @see https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_13&index=9
+     */
+    protected sign;
+
+    public _either_groups = [
+        "sign",
+        "appid",
+        "mch_id",
+        "auth_code",
+        "nonce_str",
+        "sign"
+    ];
+
+    public _required_properties = [
+        "appid",
+        "mch_id",
+        "auth_code",
+        "nonce_str",
+        "sign"
+    ];
+
+    public _optional_properties = [
+    ];
+
+}</pre>                </div>
+            </div>
+
+        </div>
+
+    </body>
+
+
+
+</html>

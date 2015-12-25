@@ -1,0 +1,191 @@
+<html>
+
+
+    <head>
+
+        <link rel="stylesheet" type="text/css" href="../../../../asset/static/prettify.css" />
+
+<script src="../../../../asset/static/prettify.js"></script>
+<script src="../../../../asset/api_definition.js"></script>
+
+
+                        <link rel="stylesheet" type="text/css" href="../../../../asset/static/prettify.css" />
+                    <link rel="stylesheet" type="text/css" href="../../../../asset/static/zephir-theme.css" />
+            
+    
+
+                        <script src="../../../../asset/static/prettify.js"></script>
+                                    <script src="../../../../asset/api_definition.js"></script>
+                    <script src="../../../../asset/static/jquery.min.js"></script>
+                    <script src="../../../../asset/static/zephir-doc.js"></script>
+            
+        <script>var ZepCurrentPath = '../../../../'</script>
+
+        
+    </head>
+
+
+    <body onload="prettyPrint()">
+        <div id="top-bar">
+            <div id="top-left">
+                                    wxpay Documentation <span class="version">v0.1.0</span>
+                            </div>
+            <div id="top-right">
+
+            </div>
+        </div>
+
+        <div id="body">
+
+            <div id="body-left">
+
+                <div class="header-search">
+
+                    <input class="search-box" placeholder="Search for a class or namespace " type="text" />
+
+                    <div id="menu-wrapper">
+
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div id="body-right">
+                <div class="content">
+                    
+<div class="breadcrumb">
+    
+    <ul>
+        
+        <li><a href="../../../../index.html">Home</a></li>
+        
+                <li><a href="../../../../classes.html">Classes</a></li>
+                <li><a href="../../../../class/WXPay/Api/Transfer/QueryOrder.html">WXPay\Api\Transfer\QueryOrder</a></li>
+                <li><a >Source</a></li>
+                
+    </ul>
+    
+</div>
+<div class="class-header source clearfix">
+    
+    <div class="access-buttons">
+        <a class="zep-button" href="../../../../class/WXPay/Api/Transfer/QueryOrder.html">Class</a>
+
+            </div>
+    
+    <div class="class-full-name">
+        
+        <span class="class-type">Class</span>
+        
+                <span class="namespace-piece">
+            <a href="../../../../namespace/WXPay.html">WXPay</a>
+        </span>
+                <span class="namespace-piece">
+            <a href="../../../../namespace/WXPay/Api.html">Api</a>
+        </span>
+                <span class="namespace-piece">
+            <a href="../../../../namespace/WXPay/Api/Transfer.html">Transfer</a>
+        </span>
+                <h1 class="class-name">QueryOrder</h1>
+    </div>
+    
+</div>
+
+
+<pre class="zephir-source-file prettyprint linenums">namespace WXPay\Api\Transfer;
+
+use WXPay\Api;
+
+class QueryOrder extends Api
+{
+
+    public api_url = "https://api.mch.weixin.qq.com/mmpaymkttransfers/gettransferinfo ";
+
+    public is_secure_pay = true;
+
+    /**
+     * 随机字符串 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+     *
+     * @var 5k8264iltkch16cq2502si8znmtm67vs nonce_str String(32)
+     *
+     * <summary>
+     * 随机字符串，不长于32位
+     * </summary>
+     *
+     * @see https://pay.weixin.qq.com/wiki/doc/api/mch_pay.php?chapter=14_3
+     */
+    protected nonce_str;
+    /**
+     * 签名 C380BEC2BFD727A4B6845133519F3AD6
+     *
+     * @var c380bec2bfd727a4b6845133519f3ad6 sign String(32)
+     *
+     * <summary>
+     * 生成签名方式查看3.2.1节
+     * </summary>
+     *
+     * @see https://pay.weixin.qq.com/wiki/doc/api/mch_pay.php?chapter=14_3
+     */
+    protected sign;
+    /**
+     * 商户订单号 10000098201411111234567890
+     *
+     * @var 10000098201411111234567890 partner_trade_no String(28)
+     *
+     * <summary>
+     * 商户调用企业付款API时使用的商户订单号
+     * </summary>
+     *
+     * @see https://pay.weixin.qq.com/wiki/doc/api/mch_pay.php?chapter=14_3
+     */
+    protected partner_trade_no;
+    /**
+     * 商户号 10000098
+     *
+     * @var 10000098 mch_id String(32)
+     *
+     * <summary>
+     * 微信支付分配的商户号
+     * </summary>
+     *
+     * @see https://pay.weixin.qq.com/wiki/doc/api/mch_pay.php?chapter=14_3
+     */
+    protected mch_id;
+    /**
+     * Appid wxe062425f740d30d8
+     *
+     * @var wxe062425f740d30d8 appid String(32)
+     *
+     * <summary>
+     * 商户号的appid
+     * </summary>
+     *
+     * @see https://pay.weixin.qq.com/wiki/doc/api/mch_pay.php?chapter=14_3
+     */
+    protected appid;
+
+    public _either_groups = [
+    ];
+
+    public _required_properties = [
+        "nonce_str",
+        "sign",
+        "partner_trade_no",
+        "mch_id",
+        "appid"
+    ];
+
+    public _optional_properties = [
+    ];
+
+}</pre>                </div>
+            </div>
+
+        </div>
+
+    </body>
+
+
+
+</html>

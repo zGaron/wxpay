@@ -1,0 +1,11 @@
+{
+    "return_code": "SUCCESS",
+    "return_msg": "OK",
+    "appid": "wx9682fc7c2ab854ef",
+    "mch_id": "1263567101",
+    "nonce_str": "czRbZTlBoX6pcOXj",
+    "sign": "018D3B9AB389FB3B13FD081060D0C369",
+    "result_code": "SUCCESS",
+    "prepay_id": "wx2015122403253384786760700625297938",
+    "trade_type": "APP"
+}

@@ -1,0 +1,74 @@
+namespace WXPay\Api\<?php echo ucfirst($group);?>;
+
+use WXPay\Api;
+
+class <?php echo $class_name?> extends Api
+{
+
+    private api_url = "<?php echo $api_url;?>";
+
+    private is_secure_pay = <?php echo $isSecPay ? "true" : "false"?>;
+
+<?php foreach($columns as $column => $item):?>
+    /**
+     * <?php echo $item['desc']?> <?php echo $item['type'].PHP_EOL?>
+     *
+     * @var <?php echo strtolower(preg_replace('/\(\d+\)/', '', $item['type']));?> <?php echo $column;?> <?php echo $item['example'].PHP_EOL?>
+     *
+     * <summary>
+     * <?php
+        if(mb_strlen($item['detail']) > 54){
+            for($i = 0;$i < (mb_strlen($item['detail'], "UTF-8") / 54) + 1; $i++) {
+                echo mb_substr($item['detail'], $i * 54, 54, "UTF-8") . PHP_EOL . "     * ";
+            }
+        } else {
+            echo $item['detail'] . PHP_EOL . "     * ";
+        }
+        ?></summary>
+     *
+     * @see <?php echo $docUrl.PHP_EOL?>
+     */
+    protected <?php echo $column; echo $column == "trade_type" ? " = \"" . strtoupper($group) . "\"" : "" ;?>;
+<?php endforeach;?>
+
+    private _either_groups = [
+<?php
+if(isset($either_groups[0])) {
+    foreach($either_groups[0] as $idx => $column_item):?>
+        <?php
+        echo "\"{$column_item}\"";
+        if(count($either_groups[0]) > $idx + 1) {
+            echo ",";
+        }
+        echo PHP_EOL;
+        ?>
+<?php
+    endforeach;
+}?>
+    ];
+
+    private _required_properties = [
+<?php foreach($required_properties as $idx => $property):?>
+        <?php
+    echo "\"{$property}\"";
+    if(count($required_properties) > $idx + 1) {
+        echo ",";
+    }
+    echo PHP_EOL;
+    ?>
+<?php endforeach;?>
+    ];
+
+    private _optional_properties = [
+<?php foreach($optional_properties as $idx => $property):?>
+        <?php
+    echo "\"{$property}\"";
+    if(count($optional_properties) > $idx + 1) {
+        echo ",";
+    }
+    echo PHP_EOL;
+    ?>
+<?php endforeach;?>
+    ];
+
+}

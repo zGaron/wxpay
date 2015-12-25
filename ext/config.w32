@@ -1,0 +1,24 @@
+ARG_ENABLE("wxpay", "enable wxpay", "no");
+
+if (PHP_WXPAY != "no") {
+  EXTENSION("wxpay", "wxpay.c", null, "-I"+configure_module_dirname);
+  ADD_SOURCES(configure_module_dirname + "/kernel", "main.c memory.c exception.c hash.c debug.c backtrace.c object.c array.c string.c fcall.c require.c file.c operators.c math.c concat.c variables.c filter.c iterator.c exit.c time.c", "wxpay");
+  ADD_SOURCES(configure_module_dirname + "/kernel/extended", "array.c fcall.c", "wxpay");
+  /* PCRE is always included on WIN32 */
+  AC_DEFINE("ZEPHIR_USE_PHP_PCRE", 1, "Whether PHP pcre extension is present at compile time");
+  if (PHP_JSON != "no") {
+    ADD_EXTENSION_DEP("wxpay", "json");
+    AC_DEFINE("ZEPHIR_USE_PHP_JSON", 1, "Whether PHP json extension is present at compile time");
+  }
+  
+  ADD_SOURCES(configure_module_dirname + "/wxpay", "option.zep.c api.zep.c credential.zep.c config.zep.c", "wxpay");
+	ADD_SOURCES(configure_module_dirname + "/wxpay/api/app", "closeorder.zep.c createorder.zep.c createrefund.zep.c queryorder.zep.c queryrefund.zep.c", "wxpay");
+	ADD_SOURCES(configure_module_dirname + "/wxpay/api/jsapi", "closeorder.zep.c createorder.zep.c createrefund.zep.c queryorder.zep.c queryrefund.zep.c", "wxpay");
+	ADD_SOURCES(configure_module_dirname + "/wxpay/api/micropay", "autocodetoopenid.zep.c closeorder.zep.c createorder.zep.c createrefund.zep.c queryorder.zep.c queryrefund.zep.c shorturl.zep.c", "wxpay");
+	ADD_SOURCES(configure_module_dirname + "/wxpay/api/native", "closeorder.zep.c createorder.zep.c createrefund.zep.c queryorder.zep.c queryrefund.zep.c shorturl.zep.c", "wxpay");
+	ADD_SOURCES(configure_module_dirname + "/wxpay/api/transfer", "createorder.zep.c queryorder.zep.c", "wxpay");
+	ADD_SOURCES(configure_module_dirname + "/wxpay/api/wap", "createorder.zep.c", "wxpay");
+	ADD_SOURCES(configure_module_dirname + "/wxpay/credential", "app.zep.c jsapi.zep.c native1.zep.c", "wxpay");
+	ADD_SOURCES(configure_module_dirname + "/wxpay/library", "util.zep.c", "wxpay");
+  ADD_FLAG("CFLAGS_WXPAY", "/D ZEPHIR_RELEASE");
+}
